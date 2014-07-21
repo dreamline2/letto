@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>letto</title>
+</head>
+<body>
+    <h1>請愛用 console, 環保救地球。</h1>
+    <p>此為自動點腦選號</p>
+    <button id="auto">電腦選號</button>
+    <hr>
+    <p>請一個一個輸入你選擇的號碼</p>
+    <input id="input" type="text" placeholder="輸入你選擇的號碼">
+    <button id="active">確認</button>
+    <hr>
+    <button id="restart">重新開始</button>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="letto.js"></script>
+    <script>
+    LETTO.Init({
+        totalNumber: 52,
+        numberLength: 5
+    });
+
+    var $auto = $('#auto'),
+        $active = $('#active'),
+        $restart = $('#restart');
+
+    $auto.on('click', LETTO.Event.auto);
+    $active.on('click', LETTO.Event.active);
+    $restart.on('click', LETTO.Event.restart);
+    </script>
+</body>
+</html>
